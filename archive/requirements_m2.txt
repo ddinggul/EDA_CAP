@@ -1,0 +1,37 @@
+# M2 MacBook Pro TOEFL 평가 LLM 파인튜닝 패키지
+# Apple Silicon (M2/M3) 최적화
+
+# ===== 핵심 패키지 (필수) =====
+mlx>=0.16.0
+mlx-lm>=0.16.0
+
+# 데이터 처리
+pandas>=2.0.0
+numpy>=1.24.0
+
+# HuggingFace
+transformers>=4.36.0
+huggingface-hub>=0.20.0
+
+# ===== API 서버 (선택) =====
+flask>=3.0.0
+flask-cors>=4.0.0
+
+# ===== 웹 인터페이스 (선택) =====
+# streamlit>=1.30.0
+# gradio>=4.0.0
+
+# ===== 음성 인식 통합 (선택) =====
+# openai-whisper>=20231117
+
+# ===== 유틸리티 =====
+tqdm>=4.66.0
+psutil>=5.9.0  # 시스템 모니터링
+
+# ===== 평가 지표 (선택) =====
+# scikit-learn>=1.3.0
+# rouge-score>=0.1.2
+
+# ===== 데이터 증강 (고급, 선택) =====
+# nlpaug>=1.1.11
+# textaugment>=1.3.4
