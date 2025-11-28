@@ -1,0 +1,28 @@
+# TOEFL 스피킹 평가 시스템 - Flask API 서버
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# 시스템 패키지 업데이트 및 필수 라이브러리 설치
+RUN apt-get update && apt-get install -y \
+    libsndfile1 \
+    ffmpeg \
+    && rm -rf /var/lib/apt/lists/*
+
+# Python 패키지 설치
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# 애플리케이션 파일 복사
+COPY toefl_evaluator.py .
+COPY api_server.py .
+COPY toefl_evaluations_template.csv .
+
+# 포트 노출
+EXPOSE 5000
+
+# 환경변수 설정
+ENV PYTHONUNBUFFERED=1
+
+# 서버 실행
+CMD ["python", "api_server.py", "--host", "0.0.0.0", "--port", "5000"]

@@ -1,0 +1,55 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: default
+
+# 공통 레이블
+commonLabels:
+  app: toefl-evaluator
+  version: v1.0.0
+  managed-by: kustomize
+
+# 리소스 목록
+resources:
+  - configmap.yaml
+  - flask-api-deployment.yaml
+  - backend-deployment.yaml
+  - frontend-deployment.yaml
+  - ingress.yaml
+
+# Secret은 별도로 관리 (secrets.yaml을 만든 후 추가)
+# - secrets.yaml
+
+# 이미지 태그 설정
+images:
+  - name: toefl-flask-api
+    newName: your-registry/toefl-flask-api
+    newTag: latest
+  - name: toefl-backend
+    newName: your-registry/toefl-backend
+    newTag: latest
+  - name: toefl-frontend
+    newName: your-registry/toefl-frontend
+    newTag: latest
+
+# ConfigMap 생성기 (파일에서 생성하는 경우)
+# configMapGenerator:
+#   - name: toefl-config
+#     files:
+#       - config/app.conf
+
+# Secret 생성기 (환경 변수에서 생성하는 경우)
+# secretGenerator:
+#   - name: toefl-secrets
+#     envs:
+#       - .env
+
+# 리소스 제한 패치 (선택사항)
+# patchesStrategicMerge:
+#   - patches/resource-limits.yaml
+
+# 네임스페이스 접두사 (선택사항)
+# namePrefix: prod-
+
+# 네임스페이스 접미사 (선택사항)
+# nameSuffix: -v1

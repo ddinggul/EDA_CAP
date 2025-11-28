@@ -1,0 +1,100 @@
+{{- if .Values.flaskApi.enabled }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "toefl-evaluator.fullname" . }}-flask-api
+  labels:
+    {{- include "toefl-evaluator.labels" . | nindent 4 }}
+    component: flask-api
+spec:
+  {{- if not .Values.flaskApi.autoscaling.enabled }}
+  replicas: {{ .Values.flaskApi.replicaCount }}
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- include "toefl-evaluator.selectorLabels" . | nindent 6 }}
+      component: flask-api
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "toefl-evaluator.selectorLabels" . | nindent 8 }}
+        component: flask-api
+    spec:
+      {{- with .Values.global.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "toefl-evaluator.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+      - name: flask-api
+        securityContext:
+          {{- toYaml .Values.securityContext | nindent 12 }}
+        image: "{{ .Values.flaskApi.image.repository }}:{{ .Values.flaskApi.image.tag | default .Chart.AppVersion }}"
+        imagePullPolicy: {{ .Values.flaskApi.image.pullPolicy }}
+        ports:
+        - name: http
+          containerPort: {{ .Values.flaskApi.service.targetPort }}
+          protocol: TCP
+        env:
+        - name: NAVER_CLOVA_SECRET_KEY
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.secrets.existingSecret | default (printf "%s-secrets" (include "toefl-evaluator.fullname" .)) }}
+              key: clova-secret-key
+        - name: OPENAI_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.secrets.existingSecret | default (printf "%s-secrets" (include "toefl-evaluator.fullname" .)) }}
+              key: openai-api-key
+        - name: OPENAI_FINETUNED_MODEL
+          valueFrom:
+            configMapKeyRef:
+              name: {{ include "toefl-evaluator.fullname" . }}-config
+              key: openai-model
+        {{- if .Values.flaskApi.livenessProbe }}
+        livenessProbe:
+          {{- toYaml .Values.flaskApi.livenessProbe | nindent 12 }}
+        {{- end }}
+        {{- if .Values.flaskApi.readinessProbe }}
+        readinessProbe:
+          {{- toYaml .Values.flaskApi.readinessProbe | nindent 12 }}
+        {{- end }}
+        resources:
+          {{- toYaml .Values.flaskApi.resources | nindent 12 }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "toefl-evaluator.fullname" . }}-flask-api
+  labels:
+    {{- include "toefl-evaluator.labels" . | nindent 4 }}
+    component: flask-api
+spec:
+  type: {{ .Values.flaskApi.service.type }}
+  ports:
+  - port: {{ .Values.flaskApi.service.port }}
+    targetPort: http
+    protocol: TCP
+    name: http
+  selector:
+    {{- include "toefl-evaluator.selectorLabels" . | nindent 4 }}
+    component: flask-api
+{{- end }}

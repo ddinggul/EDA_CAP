@@ -1,0 +1,75 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: toefl-ingress
+  labels:
+    app: toefl-evaluator
+  annotations:
+    # Nginx Ingress Controller 사용 시
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+
+    # 파일 업로드를 위한 최대 바디 사이즈 설정 (음성 파일)
+    nginx.ingress.kubernetes.io/proxy-body-size: "50m"
+
+    # CORS 설정
+    nginx.ingress.kubernetes.io/enable-cors: "true"
+    nginx.ingress.kubernetes.io/cors-allow-methods: "PUT, GET, POST, OPTIONS"
+    nginx.ingress.kubernetes.io/cors-allow-origin: "*"
+
+    # 타임아웃 설정 (음성 평가는 시간이 걸릴 수 있음)
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "300"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "300"
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: toefl.example.com  # 실제 도메인으로 변경
+    http:
+      paths:
+      # 프론트엔드 (루트)
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: frontend
+            port:
+              number: 80
+
+      # Flask API 서버
+      - path: /api/v1
+        pathType: Prefix
+        backend:
+          service:
+            name: flask-api
+            port:
+              number: 5000
+
+      # FastAPI 백엔드
+      - path: /api/v2
+        pathType: Prefix
+        backend:
+          service:
+            name: backend
+            port:
+              number: 8000
+
+  # TLS 설정 (선택사항)
+  # tls:
+  # - hosts:
+  #   - toefl.example.com
+  #   secretName: toefl-tls-secret
+
+---
+# SSL/TLS 인증서를 위한 Secret (cert-manager 사용 시)
+# apiVersion: cert-manager.io/v1
+# kind: Certificate
+# metadata:
+#   name: toefl-cert
+#   namespace: default
+# spec:
+#   secretName: toefl-tls-secret
+#   issuerRef:
+#     name: letsencrypt-prod
+#     kind: ClusterIssuer
+#   dnsNames:
+#   - toefl.example.com

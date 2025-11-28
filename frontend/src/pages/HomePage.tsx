@@ -13,12 +13,20 @@ const HomePage: React.FC = () => {
         <p style={styles.subtitle}>
           AI 기반 실시간 TOEFL 스피킹 평가 및 피드백
         </p>
-        <button
-          onClick={() => navigate('/analyze')}
-          style={styles.ctaButton}
-        >
-          스피킹 분석 시작하기
-        </button>
+        <div style={styles.buttonGroup}>
+          <button
+            onClick={() => navigate('/exam-selection')}
+            style={{ ...styles.ctaButton, ...styles.primaryButton }}
+          >
+            실전 모의고사 시작
+          </button>
+          <button
+            onClick={() => navigate('/analyze')}
+            style={{ ...styles.ctaButton, ...styles.secondaryButton }}
+          >
+            파일 업로드 분석
+          </button>
+        </div>
       </div>
 
       <div style={styles.features}>
@@ -93,17 +101,30 @@ const styles: { [key: string]: React.CSSProperties } = {
     marginBottom: '30px',
     lineHeight: '1.6',
   },
+  buttonGroup: {
+    display: 'flex',
+    gap: '15px',
+    justifyContent: 'center',
+    flexWrap: 'wrap',
+  },
   ctaButton: {
     padding: '16px 40px',
     fontSize: '18px',
     fontWeight: '600',
-    background: gradients.primary,
-    color: theme.text.white,
     border: 'none',
     borderRadius: '8px',
     cursor: 'pointer',
     transition: 'all 0.3s ease',
     boxShadow: shadows.colored,
+  },
+  primaryButton: {
+    background: gradients.primary,
+    color: theme.text.white,
+  },
+  secondaryButton: {
+    background: theme.background.primary,
+    color: theme.accent,
+    border: `2px solid ${theme.accent}`,
   },
   features: {
     display: 'grid',

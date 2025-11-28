@@ -1,0 +1,22 @@
+apiVersion: v2
+name: toefl-evaluator
+description: A Helm chart for TOEFL Speaking Evaluation System
+type: application
+version: 1.0.0
+appVersion: "1.0.0"
+
+keywords:
+  - toefl
+  - speech-evaluation
+  - ai
+  - education
+
+maintainers:
+  - name: TOEFL Team
+    email: team@example.com
+
+home: https://github.com/your-org/toefl-evaluator
+sources:
+  - https://github.com/your-org/toefl-evaluator
+
+icon: https://example.com/icon.png

@@ -1,0 +1,64 @@
+version: '3.8'
+
+services:
+  # Flask API 서버 (음성 평가)
+  flask-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: toefl-flask-api
+    ports:
+      - "5000:5000"
+    environment:
+      - NAVER_CLOVA_SECRET_KEY=${NAVER_CLOVA_SECRET_KEY}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - OPENAI_FINETUNED_MODEL=${OPENAI_FINETUNED_MODEL:-gpt-3.5-turbo}
+    volumes:
+      - ./toefl_evaluator.py:/app/toefl_evaluator.py
+      - ./api_server.py:/app/api_server.py
+    restart: unless-stopped
+    networks:
+      - toefl-network
+
+  # FastAPI 백엔드
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: toefl-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - NAVER_CLOVA_SECRET_KEY=${NAVER_CLOVA_SECRET_KEY}
+    env_file:
+      - ./backend/.env
+    volumes:
+      - ./backend/app:/app/app
+      - ./backend/tmp:/app/tmp
+    restart: unless-stopped
+    networks:
+      - toefl-network
+    depends_on:
+      - flask-api
+
+  # React 프론트엔드
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: toefl-frontend
+    ports:
+      - "3000:80"
+    restart: unless-stopped
+    networks:
+      - toefl-network
+    depends_on:
+      - backend
+
+networks:
+  toefl-network:
+    driver: bridge
+
+volumes:
+  backend-tmp:

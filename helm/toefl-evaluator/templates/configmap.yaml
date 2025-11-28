@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "toefl-evaluator.fullname" . }}-config
+  labels:
+    {{- include "toefl-evaluator.labels" . | nindent 4 }}
+data:
+  openai-model: {{ .Values.config.openaiModel | quote }}
+  flask-api-host: {{ .Values.config.flaskApiHost | quote }}
+  flask-api-port: {{ .Values.config.flaskApiPort | quote }}
+  backend-host: {{ .Values.config.backendHost | quote }}
+  backend-port: {{ .Values.config.backendPort | quote }}

@@ -1,0 +1,112 @@
+[
+  {
+    "id": "part2_q1",
+    "part": 2,
+    "questionNumber": 1,
+    "type": "Independent Speaking",
+    "title": "Preferred Study Subject",
+    "question": "Do you agree or disagree with the following statement? It is better to study subjects that you find interesting rather than subjects that will help you find a job. Use specific reasons and examples to support your answer.",
+    "preparationTime": 15,
+    "responseTime": 45,
+    "sampleResponse": "I believe it's better to study subjects that interest you. When you're passionate about what you're learning, you're more motivated and engaged. For example, I chose to study psychology because I found it fascinating, and this passion helped me excel in my courses. Additionally, genuine interest leads to better retention and understanding of the material, which is valuable in any career.",
+    "tips": [
+      "State your opinion clearly in the first sentence",
+      "Provide 2-3 specific reasons or examples",
+      "Use transition words (First, Additionally, For example)",
+      "Conclude by restating your main point"
+    ]
+  },
+  {
+    "id": "part2_q2",
+    "part": 2,
+    "questionNumber": 2,
+    "type": "Independent Speaking",
+    "title": "Online vs. In-Person Classes",
+    "question": "Some students prefer to take classes online, while others prefer to attend classes in person. Which do you prefer and why? Include details and examples to support your explanation.",
+    "preparationTime": 15,
+    "responseTime": 45,
+    "sampleResponse": "I prefer attending classes in person. First, face-to-face interaction with professors allows me to ask questions immediately and get instant feedback. Second, being in a classroom helps me stay focused and avoid distractions like social media. Finally, I can collaborate with classmates more effectively during group projects. These benefits make in-person learning more valuable for me.",
+    "tips": [
+      "Choose one side and stick with it",
+      "Give 2-3 clear reasons",
+      "Use personal examples when possible",
+      "Keep your answer organized and clear"
+    ]
+  },
+  {
+    "id": "part2_q3",
+    "part": 2,
+    "questionNumber": 3,
+    "type": "Independent Speaking",
+    "title": "Working in Groups",
+    "question": "Do you prefer to work on projects alone or in a group? Use specific reasons and examples to support your preference.",
+    "preparationTime": 15,
+    "responseTime": 45,
+    "sampleResponse": "I prefer working in groups on projects. First, group work allows us to share different perspectives and ideas, which often leads to more creative solutions. For instance, in my marketing class project, my teammates brought diverse skills that improved our final presentation. Second, working with others helps develop important communication and collaboration skills that are essential in the workplace. These advantages make group work more beneficial for me.",
+    "tips": [
+      "Start with a clear statement of preference",
+      "Support with personal experiences",
+      "Mention both academic and practical benefits",
+      "Speak naturally and confidently"
+    ]
+  },
+  {
+    "id": "part3_q1",
+    "part": 3,
+    "questionNumber": 1,
+    "type": "Integrated Speaking",
+    "title": "Campus Announcement",
+    "reading": "University Announces New Meal Plan Policy\n\nEffective next semester, the university will require all first-year students living on campus to purchase the premium meal plan instead of the basic plan. The premium plan includes three meals per day, seven days per week, while the basic plan only covers two meals per day on weekdays. The administration believes this change will ensure that freshmen maintain proper nutrition during their critical first year of college. Additionally, the increased revenue will allow the dining halls to offer more diverse menu options and extend their operating hours.",
+    "conversation": "Student 1: Did you see the email about the new meal plan requirement?\n\nStudent 2: Yeah, I'm not happy about it. I think it's unfair.\n\nStudent 1: Why? Don't you think having three meals a day is better?\n\nStudent 2: The problem is the cost. The premium plan is almost twice as expensive as the basic plan. Many students are already struggling with tuition and housing costs. This will add a significant financial burden.\n\nStudent 1: That's true. What else bothers you?\n\nStudent 2: Also, the reason they gave doesn't make sense. Most freshmen I know skip breakfast anyway, and many prefer to cook simple meals in their dorm rooms. Forcing everyone to pay for three meals they might not even use is wasteful. The university should let students choose what works best for their lifestyle and budget.",
+    "audioFile": "/static/audio/part3/q1_conversation.wav",
+    "question": "The woman expresses her opinion about the university's new meal plan policy. State her opinion and explain the reasons she gives for holding that opinion.",
+    "preparationTime": 30,
+    "responseTime": 60,
+    "sampleResponse": "The woman disagrees with the university's decision to require freshmen to purchase the premium meal plan. She provides two main reasons. First, she points out that the premium plan is nearly twice as expensive as the basic plan, which will create a financial burden for students already dealing with high tuition and housing costs. Second, she argues that the university's reasoning is flawed because most freshmen skip breakfast and prefer cooking in their dorms, so forcing them to pay for three meals they won't use is wasteful. She believes students should have the freedom to choose a meal plan that fits their lifestyle and budget.",
+    "tips": [
+      "Don't give your own opinion - only report what you heard",
+      "Include both the opinion and the reasons",
+      "Mention specific details from the conversation",
+      "Use reporting language (she states, she argues, she believes)"
+    ]
+  },
+  {
+    "id": "part3_q2",
+    "part": 3,
+    "questionNumber": 2,
+    "type": "Integrated Speaking",
+    "title": "Academic Concept: Cognitive Dissonance",
+    "reading": "Cognitive Dissonance\n\nCognitive dissonance is a psychological phenomenon that occurs when a person holds two contradictory beliefs, values, or attitudes simultaneously, or when their behavior conflicts with their beliefs. This mental discomfort motivates individuals to reduce the inconsistency by changing their beliefs, acquiring new information, or minimizing the importance of the conflicting elements. The theory, developed by Leon Festinger in 1957, suggests that people have an inner drive to maintain harmony in their beliefs and actions.",
+    "lecture": "Let me give you a clear example of cognitive dissonance from everyday life. Imagine someone who considers themselves environmentally conscious - they believe in protecting the environment and reducing pollution. However, this person drives a large SUV that consumes a lot of gas and produces significant emissions.\n\nThis creates cognitive dissonance because their behavior - driving a gas-guzzling vehicle - conflicts with their belief in environmental protection. To reduce this psychological discomfort, they might employ several strategies.\n\nOne approach is to change their behavior by trading in the SUV for a hybrid or electric car. However, if they can't afford to do that, they might instead modify their beliefs. For example, they could convince themselves that their individual impact is minimal compared to large corporations, or they might start emphasizing other environmentally friendly actions they take, like recycling or using reusable bags, to justify keeping the SUV.\n\nAnother strategy is to seek out new information that supports their behavior, such as research suggesting that manufacturing a new car has a bigger environmental impact than continuing to drive an older vehicle.",
+    "audioFile": "/static/audio/part3/q2_lecture.wav",
+    "question": "Using the example from the lecture, explain what cognitive dissonance is and how people typically respond to it.",
+    "preparationTime": 30,
+    "responseTime": 60,
+    "sampleResponse": "Cognitive dissonance is the mental discomfort people feel when their beliefs and behaviors contradict each other. The professor illustrates this with an example of an environmentally conscious person who drives a gas-guzzling SUV. This creates dissonance because their actions conflict with their environmental values. The professor explains three ways people reduce this discomfort: First, they can change their behavior by buying a more fuel-efficient car. Second, if that's not possible, they might modify their beliefs by convincing themselves their individual impact is small or by emphasizing other eco-friendly habits they have. Third, they might seek information supporting their behavior, like claiming that manufacturing a new car harms the environment more than keeping the old one.",
+    "tips": [
+      "Define the concept clearly first",
+      "Use the lecture example to explain it",
+      "Connect the example back to the reading",
+      "Be concise but include key details"
+    ]
+  },
+  {
+    "id": "part3_q3",
+    "part": 3,
+    "questionNumber": 3,
+    "type": "Integrated Speaking",
+    "title": "Academic Lecture: Defensive Mechanisms in Animals",
+    "lecture": "Today I'll discuss two defensive mechanisms that animals use to protect themselves from predators. These strategies have evolved over millions of years and are remarkably effective.\n\nThe first mechanism is called aposematism, or warning coloration. This is when animals display bright, contrasting colors to signal to predators that they are dangerous or poisonous. A perfect example is the poison dart frog found in Central and South America. These tiny frogs are brightly colored - some are brilliant blue, others are vivid red or yellow. These colors serve as a warning to predators that the frog's skin contains powerful toxins. Predators that have had a bad experience with these frogs quickly learn to avoid anything with similar coloration. This is so effective that some non-poisonous species have even evolved to mimic these bright colors to gain protection, even though they're actually harmless.\n\nThe second mechanism is called behavioral mimicry. Some animals imitate the behavior of dangerous species to avoid predation. The hoverfly is an excellent example. This harmless insect has evolved to look and behave like a wasp or bee. It has similar yellow and black stripes and even makes a buzzing sound when it flies. When threatened, it will move in quick, aggressive patterns similar to a wasp. Most predators, especially birds, have learned to avoid wasps because of their painful stings. So even though the hoverfly can't sting at all, its convincing imitation of wasp behavior keeps it safe from most predators.",
+    "audioFile": "/static/audio/part3/q3_lecture.wav",
+    "question": "Using points and examples from the lecture, explain two defensive mechanisms that animals use to protect themselves from predators.",
+    "preparationTime": 20,
+    "responseTime": 60,
+    "sampleResponse": "The professor describes two defensive mechanisms animals use against predators. The first is aposematism, or warning coloration. Animals display bright colors to signal they're dangerous. For example, poison dart frogs have vivid blue, red, or yellow skin that warns predators about their toxic skin. This is so effective that some harmless species mimic these colors for protection. The second mechanism is behavioral mimicry, where animals imitate dangerous species. The professor gives the example of the hoverfly, which looks and acts like a wasp with yellow-black stripes, buzzing sounds, and aggressive movements. Even though hoverflies can't sting, predators avoid them because they've learned to stay away from wasps. Both strategies successfully protect these animals from being eaten.",
+    "tips": [
+      "Organize your response by mechanism",
+      "Include the example for each mechanism",
+      "Explain HOW each mechanism protects the animal",
+      "Use signaling language (The first... The second...)"
+    ]
+  }
+]

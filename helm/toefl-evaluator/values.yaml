@@ -1,0 +1,210 @@
+# Default values for toefl-evaluator
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+# 전역 설정
+global:
+  imagePullSecrets: []
+  storageClass: ""
+
+# Flask API 서버 설정
+flaskApi:
+  enabled: true
+  replicaCount: 2
+
+  image:
+    repository: your-registry/toefl-flask-api
+    pullPolicy: IfNotPresent
+    tag: "latest"
+
+  service:
+    type: ClusterIP
+    port: 5000
+    targetPort: 5000
+
+  resources:
+    requests:
+      memory: "512Mi"
+      cpu: "250m"
+    limits:
+      memory: "1Gi"
+      cpu: "500m"
+
+  autoscaling:
+    enabled: false
+    minReplicas: 2
+    maxReplicas: 10
+    targetCPUUtilizationPercentage: 70
+
+  livenessProbe:
+    httpGet:
+      path: /health
+      port: 5000
+    initialDelaySeconds: 30
+    periodSeconds: 10
+
+  readinessProbe:
+    httpGet:
+      path: /health
+      port: 5000
+    initialDelaySeconds: 10
+    periodSeconds: 5
+
+# FastAPI 백엔드 설정
+backend:
+  enabled: true
+  replicaCount: 2
+
+  image:
+    repository: your-registry/toefl-backend
+    pullPolicy: IfNotPresent
+    tag: "latest"
+
+  service:
+    type: ClusterIP
+    port: 8000
+    targetPort: 8000
+
+  resources:
+    requests:
+      memory: "512Mi"
+      cpu: "250m"
+    limits:
+      memory: "1Gi"
+      cpu: "500m"
+
+  autoscaling:
+    enabled: false
+    minReplicas: 2
+    maxReplicas: 10
+    targetCPUUtilizationPercentage: 70
+
+  livenessProbe:
+    httpGet:
+      path: /
+      port: 8000
+    initialDelaySeconds: 30
+    periodSeconds: 10
+
+  readinessProbe:
+    httpGet:
+      path: /
+      port: 8000
+    initialDelaySeconds: 10
+    periodSeconds: 5
+
+  persistence:
+    enabled: true
+    storageClass: ""
+    accessMode: ReadWriteOnce
+    size: 1Gi
+    mountPath: /app/tmp
+
+# React 프론트엔드 설정
+frontend:
+  enabled: true
+  replicaCount: 2
+
+  image:
+    repository: your-registry/toefl-frontend
+    pullPolicy: IfNotPresent
+    tag: "latest"
+
+  service:
+    type: LoadBalancer
+    port: 80
+    targetPort: 80
+
+  resources:
+    requests:
+      memory: "128Mi"
+      cpu: "100m"
+    limits:
+      memory: "256Mi"
+      cpu: "200m"
+
+  autoscaling:
+    enabled: false
+    minReplicas: 2
+    maxReplicas: 5
+    targetCPUUtilizationPercentage: 80
+
+  livenessProbe:
+    httpGet:
+      path: /
+      port: 80
+    initialDelaySeconds: 10
+    periodSeconds: 10
+
+  readinessProbe:
+    httpGet:
+      path: /
+      port: 80
+    initialDelaySeconds: 5
+    periodSeconds: 5
+
+# Ingress 설정
+ingress:
+  enabled: true
+  className: "nginx"
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/proxy-body-size: "50m"
+    nginx.ingress.kubernetes.io/enable-cors: "true"
+    nginx.ingress.kubernetes.io/cors-allow-methods: "PUT, GET, POST, OPTIONS"
+    nginx.ingress.kubernetes.io/cors-allow-origin: "*"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "300"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "300"
+    # cert-manager.io/cluster-issuer: "letsencrypt-prod"
+
+  hosts:
+    - host: toefl.example.com
+      paths:
+        - path: /
+          pathType: Prefix
+          backend: frontend
+        - path: /api/v1
+          pathType: Prefix
+          backend: flaskApi
+        - path: /api/v2
+          pathType: Prefix
+          backend: backend
+
+  tls: []
+  # - secretName: toefl-tls-secret
+  #   hosts:
+  #     - toefl.example.com
+
+# ConfigMap 설정
+config:
+  openaiModel: "gpt-3.5-turbo"
+  flaskApiHost: "0.0.0.0"
+  flaskApiPort: "5000"
+  backendHost: "0.0.0.0"
+  backendPort: "8000"
+
+# Secret 설정 (실제 값은 values.yaml에 넣지 말고 --set으로 전달)
+secrets:
+  # clovaSecretKey: ""  # --set secrets.clovaSecretKey=your_key
+  # openaiApiKey: ""    # --set secrets.openaiApiKey=sk-your_key
+  existingSecret: ""    # 기존 Secret 사용 시 이름 지정
+
+# ServiceAccount 설정
+serviceAccount:
+  create: true
+  annotations: {}
+  name: "toefl-evaluator"
+
+# Pod 설정
+podAnnotations: {}
+podSecurityContext: {}
+securityContext: {}
+
+# Node 선택
+nodeSelector: {}
+tolerations: []
+affinity: {}
+
+# 네임스페이스
+namespaceOverride: ""

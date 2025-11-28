@@ -1,0 +1,65 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+venv/
+env/
+ENV/
+.venv
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# Documentation
+*.md
+!README.md
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+*.log
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Node modules (for root directory)
+node_modules/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Archive
+archive/
+
+# Temporary files
+tmp/
+*.tmp
+*.temp
+
+# Dataset preparation
+dataset_preparation/
+
+# Unused files
+unused_*/
