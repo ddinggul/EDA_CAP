@@ -4,11 +4,11 @@
     "part": 2,
     "questionNumber": 1,
     "type": "Independent Speaking",
-    "title": "Preferred Study Subject",
-    "question": "Do you agree or disagree with the following statement? It is better to study subjects that you find interesting rather than subjects that will help you find a job. Use specific reasons and examples to support your answer.",
+    "title": "Childhood Happiness",
+    "question": "Childhood is the happiest time in one's life. Do you agree?",
     "preparationTime": 15,
     "responseTime": 45,
-    "sampleResponse": "I believe it's better to study subjects that interest you. When you're passionate about what you're learning, you're more motivated and engaged. For example, I chose to study psychology because I found it fascinating, and this passion helped me excel in my courses. Additionally, genuine interest leads to better retention and understanding of the material, which is valuable in any career.",
+    "sampleResponse": "I partially agree with this statement. Childhood has many joyful moments because children have fewer responsibilities and can focus on play and exploration. However, I believe happiness depends on individual circumstances. Some people face difficulties in childhood, while others find greater happiness in adulthood when they have more freedom and control over their lives.",
     "tips": [
       "State your opinion clearly in the first sentence",
       "Provide 2-3 specific reasons or examples",
@@ -21,11 +21,11 @@
     "part": 2,
     "questionNumber": 2,
     "type": "Independent Speaking",
-    "title": "Online vs. In-Person Classes",
-    "question": "Some students prefer to take classes online, while others prefer to attend classes in person. Which do you prefer and why? Include details and examples to support your explanation.",
+    "title": "Living Away from Home",
+    "question": "Do you agree or disagree with the following statement? It is important for a child's development to spend short periods of time living away from home visiting other relatives or friends.",
     "preparationTime": 15,
     "responseTime": 45,
-    "sampleResponse": "I prefer attending classes in person. First, face-to-face interaction with professors allows me to ask questions immediately and get instant feedback. Second, being in a classroom helps me stay focused and avoid distractions like social media. Finally, I can collaborate with classmates more effectively during group projects. These benefits make in-person learning more valuable for me.",
+    "sampleResponse": "I agree that spending time away from home is important for children's development. First, it helps them develop independence and learn to adapt to new environments. Second, staying with relatives or friends exposes children to different lifestyles and perspectives, which broadens their understanding of the world. Finally, these experiences build confidence and social skills that will benefit them throughout their lives.",
     "tips": [
       "Choose one side and stick with it",
       "Give 2-3 clear reasons",
@@ -38,16 +38,169 @@
     "part": 2,
     "questionNumber": 3,
     "type": "Independent Speaking",
-    "title": "Working in Groups",
-    "question": "Do you prefer to work on projects alone or in a group? Use specific reasons and examples to support your preference.",
+    "title": "Online vs. In-Store Shopping",
+    "question": "More and more people are buying items on the Internet and from magazines or catalogs. Other people prefer shopping in a store. Which do you prefer and why?",
     "preparationTime": 15,
     "responseTime": 45,
-    "sampleResponse": "I prefer working in groups on projects. First, group work allows us to share different perspectives and ideas, which often leads to more creative solutions. For instance, in my marketing class project, my teammates brought diverse skills that improved our final presentation. Second, working with others helps develop important communication and collaboration skills that are essential in the workplace. These advantages make group work more beneficial for me.",
+    "sampleResponse": "I prefer shopping online for several reasons. First, it's more convenient because I can shop anytime without traveling to a physical store. Second, online shopping offers a wider variety of products and makes it easier to compare prices. Finally, items are delivered directly to my home, which saves time and effort. These advantages make online shopping my preferred choice.",
     "tips": [
       "Start with a clear statement of preference",
       "Support with personal experiences",
-      "Mention both academic and practical benefits",
+      "Mention both practical benefits",
       "Speak naturally and confidently"
+    ]
+  },
+  {
+    "id": "part2_q4",
+    "part": 2,
+    "questionNumber": 4,
+    "type": "Independent Speaking",
+    "title": "Expensive Purchases",
+    "question": "If you are going to purchase an expensive product, will you borrow the money to buy it, or save the money and then purchase the item?",
+    "preparationTime": 15,
+    "responseTime": 45,
+    "sampleResponse": "I would save money before making an expensive purchase. First, borrowing money means paying interest, which makes the product more expensive overall. Second, saving teaches financial discipline and helps me appreciate the value of money. Finally, owning something I've saved for gives me a greater sense of accomplishment and avoids the stress of debt.",
+    "tips": [
+      "State your choice clearly",
+      "Explain financial reasoning",
+      "Mention personal values",
+      "Be specific about advantages"
+    ]
+  },
+  {
+    "id": "part2_q5",
+    "part": 2,
+    "questionNumber": 5,
+    "type": "Independent Speaking",
+    "title": "Course Selection Approach",
+    "question": "Some college students choose to take courses in a variety of subject areas in order to get a broad education. Others choose to focus on a single subject area in order to have a deeper understanding of that area. Which approach to course selection do you think is better for students and why?",
+    "preparationTime": 15,
+    "responseTime": 45,
+    "sampleResponse": "I believe taking courses in a variety of subject areas is better. First, a broad education exposes students to different fields and helps them discover their true interests. Second, knowledge from various disciplines can be combined in creative ways to solve complex problems. Finally, having diverse skills makes graduates more adaptable in today's rapidly changing job market.",
+    "tips": [
+      "Choose one approach and defend it",
+      "Give multiple benefits",
+      "Connect to real-world applications",
+      "Use clear transitions"
+    ]
+  },
+  {
+    "id": "part2_q6",
+    "part": 2,
+    "questionNumber": 6,
+    "type": "Independent Speaking",
+    "title": "Online Video Games for Learning",
+    "question": "Do you agree or disagree with the following statement that online video game helps students learning?",
+    "preparationTime": 15,
+    "responseTime": 45,
+    "sampleResponse": "I agree that online video games can help students learn. First, educational games make learning more engaging and interactive, which increases motivation. Second, many games develop problem-solving skills and strategic thinking. Finally, multiplayer games can teach collaboration and communication skills. However, it's important to choose appropriate games and limit playing time.",
+    "tips": [
+      "State your position clearly",
+      "Acknowledge both benefits and limitations",
+      "Use specific examples if possible",
+      "Maintain balanced perspective"
+    ]
+  },
+  {
+    "id": "part2_q7",
+    "part": 2,
+    "questionNumber": 7,
+    "type": "Independent Speaking",
+    "title": "Class Time Preference",
+    "question": "Some students prefer to take classes in the morning. Other students prefer evening classes. Which do you prefer, and why?",
+    "preparationTime": 15,
+    "responseTime": 45,
+    "sampleResponse": "I prefer taking classes in the morning. First, I'm more alert and focused during morning hours, which helps me absorb information better. Second, morning classes allow me to have afternoons free for homework, part-time work, or extracurricular activities. Finally, maintaining a morning schedule helps me develop good time management habits and a healthy routine.",
+    "tips": [
+      "State your preference immediately",
+      "Relate to your personal schedule and energy",
+      "Mention productivity benefits",
+      "Be consistent with your reasoning"
+    ]
+  },
+  {
+    "id": "part2_q8",
+    "part": 2,
+    "questionNumber": 8,
+    "type": "Independent Speaking",
+    "title": "Job Satisfaction vs. Money",
+    "question": "Some people think money is the most important consideration in working. Others find it most important to be personally satisfied with their job. Which view do you agree with?",
+    "preparationTime": 15,
+    "responseTime": 45,
+    "sampleResponse": "I believe personal satisfaction is more important than money when choosing a job. First, we spend most of our waking hours at work, so enjoying what we do greatly affects our overall happiness and mental health. Second, job satisfaction often leads to better performance and career growth, which can eventually result in financial success anyway. Finally, no amount of money can compensate for spending years in a job you hate.",
+    "tips": [
+      "Make a clear choice",
+      "Explain long-term implications",
+      "Connect to quality of life",
+      "Use logical reasoning"
+    ]
+  },
+  {
+    "id": "part2_q9",
+    "part": 2,
+    "questionNumber": 9,
+    "type": "Independent Speaking",
+    "title": "Parenting Approach",
+    "question": "Do you think it is better for parents to praise their children for good behaviors or to punish children for bad behaviors?",
+    "preparationTime": 15,
+    "responseTime": 45,
+    "sampleResponse": "I think praising good behaviors is more effective than punishing bad behaviors. First, positive reinforcement encourages children to repeat good actions and builds their self-confidence. Second, praise creates a supportive relationship between parents and children, while excessive punishment can damage trust. Finally, children who receive praise learn to internalize good values rather than simply avoiding punishment.",
+    "tips": [
+      "Choose one approach",
+      "Discuss psychological effects",
+      "Consider long-term outcomes",
+      "Support with reasoning"
+    ]
+  },
+  {
+    "id": "part2_q10",
+    "part": 2,
+    "questionNumber": 10,
+    "type": "Independent Speaking",
+    "title": "Money vs. Experience",
+    "question": "Some people think that money is their priority and they should earn money. However, others disagree and argue that it is more important to have personal experience. Which view do you agree with?",
+    "preparationTime": 15,
+    "responseTime": 45,
+    "sampleResponse": "I believe personal experiences are more valuable than money, especially when you're young. First, experiences like traveling, learning new skills, and meeting diverse people contribute to personal growth in ways money cannot buy. Second, rich life experiences make us more well-rounded individuals and provide memories that last forever. Finally, the skills and perspectives gained from experiences often lead to better career opportunities later.",
+    "tips": [
+      "State your priority clearly",
+      "Distinguish between short-term and long-term value",
+      "Use concrete examples",
+      "Address potential counterarguments"
+    ]
+  },
+  {
+    "id": "part2_q11",
+    "part": 2,
+    "questionNumber": 11,
+    "type": "Independent Speaking",
+    "title": "Student Assessment Methods",
+    "question": "To encourage students to study, which would be better; taking an exam or doing a lot of activities?",
+    "preparationTime": 15,
+    "responseTime": 45,
+    "sampleResponse": "I think doing activities is better for encouraging students to study. First, hands-on activities make learning more engaging and help students understand concepts practically. Second, activities accommodate different learning styles better than traditional exams. Finally, project-based learning develops critical thinking and creativity, which are more valuable than memorization skills tested by exams.",
+    "tips": [
+      "Choose one method",
+      "Compare learning outcomes",
+      "Consider student engagement",
+      "Mention skill development"
+    ]
+  },
+  {
+    "id": "part2_q12",
+    "part": 2,
+    "questionNumber": 12,
+    "type": "Independent Speaking",
+    "title": "Contacting Professors",
+    "question": "When you need to ask a question to your professor, which do you prefer and why: visiting the professor's office or sending an email?",
+    "preparationTime": 15,
+    "responseTime": 45,
+    "sampleResponse": "I prefer visiting the professor's office in person. First, face-to-face conversations allow for immediate clarification and deeper discussion of complex topics. Second, office visits help build a personal relationship with the professor, which can be valuable for mentorship and recommendation letters. Finally, some questions are easier to explain in person, especially when they involve diagrams or detailed explanations.",
+    "tips": [
+      "State your preference clearly",
+      "Consider communication effectiveness",
+      "Mention relationship building",
+      "Think about practical advantages"
     ]
   },
   {
