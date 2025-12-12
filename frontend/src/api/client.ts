@@ -17,7 +17,7 @@ export const analyzeSpeech = async (
   formData.append('task_id', taskId.toString());
 
   const response = await apiClient.post<SpeechAnalyzeResponse>(
-    '/api/speech/analyze',
+    '/speech/analyze',
     formData,
     {
       headers: {
