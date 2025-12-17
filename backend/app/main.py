@@ -16,6 +16,11 @@ static_path = Path(__file__).parent / "static"
 static_path.mkdir(exist_ok=True)
 app.mount("/static", StaticFiles(directory=str(static_path)), name="static")
 
+# Mount data directory for audio files
+data_path = Path(__file__).parent / "data"
+if data_path.exists():
+    app.mount("/data", StaticFiles(directory=str(data_path)), name="data")
+
 # CORS middleware configuration
 app.add_middleware(
     CORSMiddleware,

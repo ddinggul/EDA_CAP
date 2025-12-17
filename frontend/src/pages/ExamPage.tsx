@@ -21,6 +21,7 @@ export default function ExamPage() {
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const audioChunksRef = useRef<Blob[]>([]);
   const timerRef = useRef<number | null>(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
     fetchQuestion();
@@ -31,6 +32,9 @@ export default function ExamPage() {
       timerRef.current = setTimeout(() => {
         setTimeRemaining(timeRemaining - 1);
       }, 1000);
+    } else if (timeRemaining === 0 && phase === 'reading') {
+      // Auto-transition to listening or preparation after reading time expires
+      handleAfterReading();
     } else if (timeRemaining === 0 && phase === 'preparation') {
       startRecording();
     } else if (timeRemaining === 0 && phase === 'recording') {
@@ -59,7 +63,7 @@ export default function ExamPage() {
     if (!question) return;
     if (question.reading) {
       setPhase('reading');
-      setTimeRemaining(45);
+      setTimeRemaining(question.readingTime || 45);
     } else if (question.audioFile) {
       setPhase('listening');
     } else {
@@ -71,9 +75,22 @@ export default function ExamPage() {
     if (!question) return;
     if (question.audioFile) {
       setPhase('listening');
+      // Auto-play audio after a short delay
+      setTimeout(() => {
+        if (audioRef.current) {
+          audioRef.current.play().catch(err => {
+            console.error('Failed to auto-play audio:', err);
+          });
+        }
+      }, 500);
     } else {
       startPreparation();
     }
+  };
+
+  const handleAudioEnded = () => {
+    // Auto-start preparation when audio ends
+    startPreparation();
   };
 
   const startPreparation = () => {
@@ -197,7 +214,7 @@ export default function ExamPage() {
               </div>
               {question.reading && (
                 <p style={styles.smallText}>
-                  You will have 45 seconds to read a passage, then {question.preparationTime} seconds to prepare your response.
+                  You will have {question.readingTime || 45} seconds to read a passage, then {question.preparationTime} seconds to prepare your response.
                 </p>
               )}
               {!question.reading && (
@@ -234,9 +251,9 @@ export default function ExamPage() {
             <div style={styles.readingBox}>
               <pre style={styles.readingText}>{question.reading}</pre>
             </div>
-            <button onClick={handleAfterReading} style={{ ...styles.primaryButton, marginTop: '24px' }}>
-              {question.audioFile ? 'Continue to Listening' : 'Continue to Preparation'}
-            </button>
+            <div style={{ marginTop: '24px', textAlign: 'center', fontSize: '14px', color: theme.text.secondary }}>
+              <p>Reading will automatically advance when timer reaches 0</p>
+            </div>
           </div>
         )}
 
@@ -255,18 +272,18 @@ export default function ExamPage() {
                     'You will now hear a lecture. Listen carefully and take notes if needed.'}
                 </p>
                 <audio
+                  ref={audioRef}
                   controls
                   style={{ width: '100%', marginTop: '16px' }}
-                  src={`http://localhost:8000${question.audioFile}`}
-                  onEnded={() => setTimeRemaining(0)}
+                  src={`${API_BASE_URL}${question.audioFile}`}
+                  onEnded={handleAudioEnded}
                 >
                   Your browser does not support the audio element.
                 </audio>
+                <p style={{ color: theme.text.secondary, marginTop: '16px', fontSize: '13px', fontStyle: 'italic' }}>
+                  Audio will play automatically. Preparation will start when audio ends.
+                </p>
               </div>
-
-              <button onClick={startPreparation} style={styles.primaryButton}>
-                Continue to Preparation
-              </button>
             </div>
           </div>
         )}
@@ -278,12 +295,10 @@ export default function ExamPage() {
                 <div style={{ ...styles.bigTimer, color: '#d97706' }}>{formatTime(timeRemaining)}</div>
                 <p style={styles.text}>Preparation Time Remaining</p>
               </div>
-              {/* Show question only for Part 2 (Independent Speaking) */}
-              {question.part === 2 && (
-                <div style={styles.questionBox}>
-                  <p style={{ fontWeight: '500', color: theme.text.primary }}>{question.question}</p>
-                </div>
-              )}
+              {/* Show question for all parts */}
+              <div style={styles.questionBox}>
+                <p style={{ fontWeight: '500', color: theme.text.primary }}>{question.question}</p>
+              </div>
               <div style={styles.infoBox}>
                 <p style={{ fontSize: '14px', color: theme.text.primary }}>
                   Prepare your thoughts. Recording will start automatically when time expires.

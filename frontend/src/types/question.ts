@@ -14,6 +14,7 @@ export interface Question {
 
   // For integrated tasks (Part 3)
   reading?: string;
+  readingTime?: number; // seconds for reading passage
   conversation?: string;
   lecture?: string;
   audioFile?: string;

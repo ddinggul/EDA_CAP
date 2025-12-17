@@ -59,6 +59,11 @@ temp/
 *.ogg
 *.webm
 
+# Exception: Include audio files needed for deployment
+!backend/app/data/**/*.mp3
+!backend/app/data/**/*.wav
+!backend/app/data/**/*.m4a
+
 # Node.js / Frontend
 node_modules/
 npm-debug.log*
@@ -114,3 +119,9 @@ htmlcov/
 .mypy_cache/
 .dmypy.json
 dmypy.json
+
+# Data files (CSV with sensitive/labeling data)
+*.csv
+!toefl_evaluations_template.csv
+# JSONL training data
+*.jsonl
