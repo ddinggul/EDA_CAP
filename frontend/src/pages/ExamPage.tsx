@@ -78,8 +78,11 @@ export default function ExamPage() {
       // Auto-play audio after a short delay
       setTimeout(() => {
         if (audioRef.current) {
+          console.log('Attempting to play audio:', audioRef.current.src);
           audioRef.current.play().catch(err => {
             console.error('Failed to auto-play audio:', err);
+            console.error('Audio src:', audioRef.current?.src);
+            alert('Audio autoplay was blocked. Please click the play button manually.');
           });
         }
       }, 500);
@@ -90,7 +93,20 @@ export default function ExamPage() {
 
   const handleAudioEnded = () => {
     // Auto-start preparation when audio ends
+    console.log('Audio playback ended');
     startPreparation();
+  };
+
+  const handleAudioError = (e: React.SyntheticEvent<HTMLAudioElement, Event>) => {
+    console.error('Audio error:', e);
+    const audioElement = e.currentTarget;
+    console.error('Audio error details:', {
+      error: audioElement.error,
+      networkState: audioElement.networkState,
+      readyState: audioElement.readyState,
+      src: audioElement.src
+    });
+    alert(`Failed to load audio file. Please check your connection.\nURL: ${audioElement.src}`);
   };
 
   const startPreparation = () => {
@@ -277,9 +293,14 @@ export default function ExamPage() {
                   style={{ width: '100%', marginTop: '16px' }}
                   src={`${API_BASE_URL}${question.audioFile}`}
                   onEnded={handleAudioEnded}
+                  onError={handleAudioError}
+                  crossOrigin="anonymous"
                 >
                   Your browser does not support the audio element.
                 </audio>
+                <p style={{ fontSize: '12px', color: theme.text.secondary, marginTop: '8px', fontFamily: 'monospace' }}>
+                  Audio URL: {API_BASE_URL}{question.audioFile}
+                </p>
                 <p style={{ color: theme.text.secondary, marginTop: '16px', fontSize: '13px', fontStyle: 'italic' }}>
                   Audio will play automatically. Preparation will start when audio ends.
                 </p>
