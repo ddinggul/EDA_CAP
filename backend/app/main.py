@@ -68,6 +68,22 @@ async def debug_audio_files():
         "file_count": len(files)
     }
 
+@app.get("/debug/test-audio")
+async def test_audio():
+    """Test if a sample audio file can be served"""
+    from fastapi.responses import FileResponse
+    data_path = Path(__file__).parent / "data" / "q2_listening" / "Q2_intro_I.mp3"
+    if data_path.exists():
+        return FileResponse(
+            path=str(data_path),
+            media_type="audio/mpeg",
+            headers={
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Expose-Headers": "*",
+            }
+        )
+    return {"error": "File not found", "path": str(data_path)}
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run("app.main:app", host="0.0.0.0", port=8000, reload=True)
