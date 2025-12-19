@@ -19,6 +19,7 @@ app.add_middleware(
         "http://localhost:5173",
         "http://localhost:3000",
         "http://localhost:5174",
+        "https://eda-cap.vercel.app",  # Production Vercel frontend
     ],
     allow_credentials=True,
     allow_methods=["*"],
