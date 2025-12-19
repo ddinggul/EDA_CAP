@@ -11,6 +11,21 @@ app = FastAPI(
     version="1.0.0"
 )
 
+# CORS middleware configuration - MUST be added BEFORE mounting static files
+app.add_middleware(
+    CORSMiddleware,
+    allow_origin_regex=r"https://.*\.vercel\.app",  # Allow all Vercel subdomains
+    allow_origins=[
+        "http://localhost:5173",
+        "http://localhost:3000",
+        "http://localhost:5174",
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+    expose_headers=["*"],  # Important for audio files
+)
+
 # Static files for audio
 static_path = Path(__file__).parent / "static"
 static_path.mkdir(exist_ok=True)
@@ -20,21 +35,6 @@ app.mount("/static", StaticFiles(directory=str(static_path)), name="static")
 data_path = Path(__file__).parent / "data"
 if data_path.exists():
     app.mount("/data", StaticFiles(directory=str(data_path)), name="data")
-
-# CORS middleware configuration
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5173",
-        "http://localhost:3000",
-        "https://*.vercel.app",  # Vercel deployments
-        "https://*.vercel.com",  # Vercel custom domains
-    ],
-    allow_origin_regex=r"https://.*\.vercel\.app",  # Allow all Vercel subdomains
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
 
 # Include routers
 app.include_router(speech.router)
