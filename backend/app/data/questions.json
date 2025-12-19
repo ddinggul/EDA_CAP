@@ -208,65 +208,6 @@
     "part": 3,
     "questionNumber": 1,
     "type": "Integrated Speaking",
-    "title": "Campus Announcement",
-    "reading": "University Announces New Meal Plan Policy\n\nEffective next semester, the university will require all first-year students living on campus to purchase the premium meal plan instead of the basic plan. The premium plan includes three meals per day, seven days per week, while the basic plan only covers two meals per day on weekdays. The administration believes this change will ensure that freshmen maintain proper nutrition during their critical first year of college. Additionally, the increased revenue will allow the dining halls to offer more diverse menu options and extend their operating hours.",
-    "conversation": "Student 1: Did you see the email about the new meal plan requirement?\n\nStudent 2: Yeah, I'm not happy about it. I think it's unfair.\n\nStudent 1: Why? Don't you think having three meals a day is better?\n\nStudent 2: The problem is the cost. The premium plan is almost twice as expensive as the basic plan. Many students are already struggling with tuition and housing costs. This will add a significant financial burden.\n\nStudent 1: That's true. What else bothers you?\n\nStudent 2: Also, the reason they gave doesn't make sense. Most freshmen I know skip breakfast anyway, and many prefer to cook simple meals in their dorm rooms. Forcing everyone to pay for three meals they might not even use is wasteful. The university should let students choose what works best for their lifestyle and budget.",
-    "audioFile": "/static/audio/part3/q1_conversation.wav",
-    "question": "The woman expresses her opinion about the university's new meal plan policy. State her opinion and explain the reasons she gives for holding that opinion.",
-    "preparationTime": 30,
-    "responseTime": 60,
-    "sampleResponse": "The woman disagrees with the university's decision to require freshmen to purchase the premium meal plan. She provides two main reasons. First, she points out that the premium plan is nearly twice as expensive as the basic plan, which will create a financial burden for students already dealing with high tuition and housing costs. Second, she argues that the university's reasoning is flawed because most freshmen skip breakfast and prefer cooking in their dorms, so forcing them to pay for three meals they won't use is wasteful. She believes students should have the freedom to choose a meal plan that fits their lifestyle and budget.",
-    "tips": [
-      "Don't give your own opinion - only report what you heard",
-      "Include both the opinion and the reasons",
-      "Mention specific details from the conversation",
-      "Use reporting language (she states, she argues, she believes)"
-    ]
-  },
-  {
-    "id": "part3_q2",
-    "part": 3,
-    "questionNumber": 2,
-    "type": "Integrated Speaking",
-    "title": "Academic Concept: Cognitive Dissonance",
-    "reading": "Cognitive Dissonance\n\nCognitive dissonance is a psychological phenomenon that occurs when a person holds two contradictory beliefs, values, or attitudes simultaneously, or when their behavior conflicts with their beliefs. This mental discomfort motivates individuals to reduce the inconsistency by changing their beliefs, acquiring new information, or minimizing the importance of the conflicting elements. The theory, developed by Leon Festinger in 1957, suggests that people have an inner drive to maintain harmony in their beliefs and actions.",
-    "lecture": "Let me give you a clear example of cognitive dissonance from everyday life. Imagine someone who considers themselves environmentally conscious - they believe in protecting the environment and reducing pollution. However, this person drives a large SUV that consumes a lot of gas and produces significant emissions.\n\nThis creates cognitive dissonance because their behavior - driving a gas-guzzling vehicle - conflicts with their belief in environmental protection. To reduce this psychological discomfort, they might employ several strategies.\n\nOne approach is to change their behavior by trading in the SUV for a hybrid or electric car. However, if they can't afford to do that, they might instead modify their beliefs. For example, they could convince themselves that their individual impact is minimal compared to large corporations, or they might start emphasizing other environmentally friendly actions they take, like recycling or using reusable bags, to justify keeping the SUV.\n\nAnother strategy is to seek out new information that supports their behavior, such as research suggesting that manufacturing a new car has a bigger environmental impact than continuing to drive an older vehicle.",
-    "audioFile": "/static/audio/part3/q2_lecture.wav",
-    "question": "Using the example from the lecture, explain what cognitive dissonance is and how people typically respond to it.",
-    "preparationTime": 30,
-    "responseTime": 60,
-    "sampleResponse": "Cognitive dissonance is the mental discomfort people feel when their beliefs and behaviors contradict each other. The professor illustrates this with an example of an environmentally conscious person who drives a gas-guzzling SUV. This creates dissonance because their actions conflict with their environmental values. The professor explains three ways people reduce this discomfort: First, they can change their behavior by buying a more fuel-efficient car. Second, if that's not possible, they might modify their beliefs by convincing themselves their individual impact is small or by emphasizing other eco-friendly habits they have. Third, they might seek information supporting their behavior, like claiming that manufacturing a new car harms the environment more than keeping the old one.",
-    "tips": [
-      "Define the concept clearly first",
-      "Use the lecture example to explain it",
-      "Connect the example back to the reading",
-      "Be concise but include key details"
-    ]
-  },
-  {
-    "id": "part3_q3",
-    "part": 3,
-    "questionNumber": 3,
-    "type": "Integrated Speaking",
-    "title": "Academic Lecture: Defensive Mechanisms in Animals",
-    "lecture": "Today I'll discuss two defensive mechanisms that animals use to protect themselves from predators. These strategies have evolved over millions of years and are remarkably effective.\n\nThe first mechanism is called aposematism, or warning coloration. This is when animals display bright, contrasting colors to signal to predators that they are dangerous or poisonous. A perfect example is the poison dart frog found in Central and South America. These tiny frogs are brightly colored - some are brilliant blue, others are vivid red or yellow. These colors serve as a warning to predators that the frog's skin contains powerful toxins. Predators that have had a bad experience with these frogs quickly learn to avoid anything with similar coloration. This is so effective that some non-poisonous species have even evolved to mimic these bright colors to gain protection, even though they're actually harmless.\n\nThe second mechanism is called behavioral mimicry. Some animals imitate the behavior of dangerous species to avoid predation. The hoverfly is an excellent example. This harmless insect has evolved to look and behave like a wasp or bee. It has similar yellow and black stripes and even makes a buzzing sound when it flies. When threatened, it will move in quick, aggressive patterns similar to a wasp. Most predators, especially birds, have learned to avoid wasps because of their painful stings. So even though the hoverfly can't sting at all, its convincing imitation of wasp behavior keeps it safe from most predators.",
-    "audioFile": "/static/audio/part3/q3_lecture.wav",
-    "question": "Using points and examples from the lecture, explain two defensive mechanisms that animals use to protect themselves from predators.",
-    "preparationTime": 20,
-    "responseTime": 60,
-    "sampleResponse": "The professor describes two defensive mechanisms animals use against predators. The first is aposematism, or warning coloration. Animals display bright colors to signal they're dangerous. For example, poison dart frogs have vivid blue, red, or yellow skin that warns predators about their toxic skin. This is so effective that some harmless species mimic these colors for protection. The second mechanism is behavioral mimicry, where animals imitate dangerous species. The professor gives the example of the hoverfly, which looks and acts like a wasp with yellow-black stripes, buzzing sounds, and aggressive movements. Even though hoverflies can't sting, predators avoid them because they've learned to stay away from wasps. Both strategies successfully protect these animals from being eaten.",
-    "tips": [
-      "Organize your response by mechanism",
-      "Include the example for each mechanism",
-      "Explain HOW each mechanism protects the animal",
-      "Use signaling language (The first... The second...)"
-    ]
-  },
-  {
-    "id": "part3_q4",
-    "part": 3,
-    "questionNumber": 4,
-    "type": "Integrated Speaking",
     "title": "Necessity of Snack Shop",
     "reading": "Students Need Campus Snack Shop\n\nI think the university should open a snack shop on campus-a snack shop that would be operated entirely by our students. A student-run snack shop would benefit students in two ways. First, it would create a number of job opportunities for students. Second, the store would be a convenient place on campus to buy food, providing students with a fast, easy place to get snacks at any time of the day.\n\nSincerely, Julia Wilson",
     "audioFile": "/data/q2_listening/Q2_intro_I.mp3",
@@ -282,9 +223,9 @@
     ]
   },
   {
-    "id": "part3_q5",
+    "id": "part3_q2",
     "part": 3,
-    "questionNumber": 5,
+    "questionNumber": 2,
     "type": "Integrated Speaking",
     "title": "Making Student Plays Free for Everyone",
     "reading": "The university Student Play Should Be Free for Everyone\n\nThanks to our superb theater program here at the university, we are fortunate to be able to see many plays that are put on by student actors. However, while all employees and students at the university may attend these plays for free, anyone who is not directly associated with the university must pay a fee to attend. I think student plays should be open to everyone free of charge. That way, people in the local community could benefit from having a free entertainment option in town. It would also be good for the student actors, since it would help to ensure larger audiences at the plays.\n\nSincerely, Marie Jones",
@@ -301,9 +242,9 @@
     ]
   },
   {
-    "id": "part3_q6",
+    "id": "part3_q3",
     "part": 3,
-    "questionNumber": 6,
+    "questionNumber": 3,
     "type": "Integrated Speaking",
     "title": "Allowing Laptop Use in Class",
     "reading": "Allow Laptops in Class\n\nThough most of us own laptop computers, we are currently not allowed to use them during class. I think this policy should be changed. Since most of us type faster than we write by hand, taking notes on a computer would be quicker and easier, so we could pay more attention to professor's lectures. Also, since laptop computers have internet access, professors could direct students to view Web sites with useful information while lectures are going on. They could look up useful facts and background information on a topic or view different photographs or illustrations of something the professor is describing. This would help students gain a more complete understanding of lecture topics.\n\nSincerely, Jodie Smith",
@@ -320,9 +261,9 @@
     ]
   },
   {
-    "id": "part3_q7",
+    "id": "part3_q4",
     "part": 3,
-    "questionNumber": 7,
+    "questionNumber": 4,
     "type": "Integrated Speaking",
     "title": "Improving Dormitory Kitchen Use",
     "reading": "Improving Dormitory Kitchen Use\n\nI've noticed that most students don't use the dormitory kitchens, which is unfortunate since students would probably enjoy preparing their own food. I think that the university should make improvements to the dormitory kitchens so that they will be more widely used. There are a few things that the university could do to encourage students to start using the kitchens regularly. First, I think the kitchens should be modernized with new cookware for students to use. Also, I think free cooking classes should be given to stimulate students' interest in cooking and make them want to use the kitchens.\n\nSincerely, Jennifer Adler",
@@ -339,9 +280,9 @@
     ]
   },
   {
-    "id": "part3_q8",
+    "id": "part3_q5",
     "part": 3,
-    "questionNumber": 8,
+    "questionNumber": 5,
     "type": "Integrated Speaking",
     "title": "A Community Service Graduation Requirement",
     "reading": "Community Service Requirement\n\nA university education should encourage students to engage with the world around them, but I see less and less of that engagement on campus today. I propose, therefore, that the university make community service, such as working with the local children in town, a mandatory activity for all university students before they graduate. Creating a community service requirement is a good idea because it would strengthen the relationship between our school and the town. Additionally, in fulfilling the requirement, many students would discover a love of service that would inspire them to a lifetime of volunteer work in their future communities.\n\nSincerely, Sarah Brown",
@@ -358,9 +299,9 @@
     ]
   },
   {
-    "id": "part3_q9",
+    "id": "part3_q6",
     "part": 3,
-    "questionNumber": 9,
+    "questionNumber": 6,
     "type": "Integrated Speaking",
     "title": "Extend Music Building Hours",
     "reading": "Keep the Music Building Open Later\n\nCurrently, the campus music building, which has practice rooms students can reserve for playing instruments, closes nightly at nine p.m. I think the university should keep the building open until midnight. Often, student musicians want to practice their instruments later at night, and right now there's no good place for them to do that. Also, lots of students want to use the practice rooms, so it's often difficult to reserve one. If the building were open more hours, though, it would be easier to accommodate the large number of students who want to reserve rooms.",
