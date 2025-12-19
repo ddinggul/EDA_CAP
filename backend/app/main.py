@@ -52,6 +52,21 @@ async def root():
 async def health():
     return {"status": "healthy"}
 
+@app.get("/debug/audio-files")
+async def debug_audio_files():
+    """Debug endpoint to check if audio files exist"""
+    import os
+    data_path = Path(__file__).parent / "data" / "q2_listening"
+    files = []
+    if data_path.exists():
+        files = [f.name for f in data_path.glob("*.mp3")]
+    return {
+        "data_path_exists": data_path.exists(),
+        "data_path": str(data_path),
+        "mp3_files": files,
+        "file_count": len(files)
+    }
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run("app.main:app", host="0.0.0.0", port=8000, reload=True)
